@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+.hamburger {
+  z-index: 100;
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  transform: translateY(-100vh);
+  transition: all ease-in-out 400ms;
+  overflow: hidden;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.788)
+}
+
+.dropdown-open {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  z-index: 50;
+  transition: all ease-in-out 400ms;
+  background-color: rgba(0, 0, 0, 0.897);
+  top: 0;
+  display: flex;
+  transform: translateY(0vh);
+}
+
+.home-img {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.815);
+}
