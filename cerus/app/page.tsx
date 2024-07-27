@@ -24,20 +24,19 @@ export default function Home() {
       dropdown?.classList.remove('dropdown-closed')
       dropdown?.classList.add('dropdown-open')
       document.body.style.overflow = "hidden"
-      setImageSrc(close)
       setToggle(!toggle);
     } else {
       setToggle(!toggle)
       dropdown?.classList.remove('dropdown-open')
       dropdown?.classList.add('dropdown-closed')
       document.body.style.overflow = ""
-      setImageSrc(hamburger);
     } 
   }
 
   return (
     <main className="flex min-h-screen flex-col items-center overflow-x-hidden flex flex-col bg-[#222] px-4 pb-6">
       <div className="dropdown dropdown-closed flex flex-col p-8">
+      <Image className="rounded-lg object-cover self-end" src={close} alt="close-dropdown" width="40" height="40" onClick={dropdown}/>
           <div className="flex flex-col items-start p-8 gap-10">
               <a href="/about" className="text-white text-5xl underline">About</a>
               <a href="/sponsors" className="text-white text-5xl underline">Sponsors</a>
